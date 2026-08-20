@@ -1,0 +1,66 @@
+{
+  "expo": {
+    "name": "Calculadora",
+    "slug": "calculadora",
+    "updates": {
+      "url": "https://u.expo.dev/calculadora",
+      "fallbackToCacheTimeout": 0,
+      "checkAutomatically": "ON_LOAD"
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0B1628",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.privacytools.calculadora",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Permitir acesso a camera para tirar fotos de perfil",
+        "NSPhotoLibraryUsageDescription": "Permitir acesso as fotos para perfil e mensagens",
+        "NSMicrophoneUsageDescription": "Permitir acesso ao microfone para chamadas de voz",
+        "NSFaceIDUsageDescription": "Usar Face ID para desbloquear o aplicativo"
+      }
+    },
+    "android": {
+      "package": "com.privacytools.calculadora",
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "CAMERA",
+        "RECORD_AUDIO",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT"
+      ],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundColor": "#0B1628"
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      "expo-font",
+      "expo-image-picker",
+      "expo-document-picker",
+      "expo-local-authentication",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0B1628",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain"
+        }
+      ],
+      "expo-sharing"
+    ]
+  }
+}
