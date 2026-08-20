@@ -18,7 +18,7 @@ const CODE_LENGTH = 6;
 const CODE_TTL_MS = 5 * 60 * 1000;
 const MAX_ATTEMPTS = 5;
 
-const BACKEND_URL = 'http://192.168.1.3:3001';
+const BACKEND_URL = 'https://calculadora-server-osfh.onrender.com';
 
 function isBackendConfigured(): boolean {
   return BACKEND_URL.length > 0;
