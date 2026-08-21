@@ -60,6 +60,40 @@ function adminAuth(req, res, next) {
   next();
 }
 
+app.get('/', (_req, res) => {
+  res.send(`<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora Server</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #0B1628; color: #E6EDF3; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+  .card { background: #111F35; border: 1px solid #22344F; border-radius: 12px; padding: 32px; max-width: 420px; text-align: center; }
+  h1 { margin: 0 0 8px; font-size: 22px; }
+  .status { color: #3FB950; font-weight: bold; }
+  code { background: #0B1628; padding: 2px 6px; border-radius: 4px; font-size: 13px; }
+  ul { text-align: left; line-height: 1.9; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Calculadora Server</h1>
+    <p class="status">&#9679; Online</p>
+    <p>API de verificacao OTP via Twilio.</p>
+    <ul>
+      <li><code>GET /api/health</code></li>
+      <li><code>POST /api/otp/send</code></li>
+      <li><code>POST /api/otp/verify</code></li>
+      <li><code>GET /api/admin/whitelist</code></li>
+      <li><code>POST /api/admin/whitelist/add</code></li>
+      <li><code>POST /api/admin/whitelist/remove</code></li>
+    </ul>
+  </div>
+</body>
+</html>`);
+});
+
 app.get('/api/health', (_req, res) => {
   res.json({ ok: true });
 });
